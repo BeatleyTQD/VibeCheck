@@ -23,6 +23,7 @@ const Register = (props) => {
         let userNameCheck = true;
         let userEmailCheck = true;
 
+        //Checks newly input user info against database for duplicates
         users.forEach(user => {
             if (user.email === userEmailInputValue) {
                 userEmailCheck = false;
@@ -38,6 +39,7 @@ const Register = (props) => {
                             APIManager.GetAll("users").then((response) => {
                                 response.forEach(user => {
                                     if(user.userName === userNameInputValue){
+                                      // Assigns json-server generated user id to the user object itself
                                         credentials.userId = user.id
                                         props.setUser(credentials)
                                         props.history.push("/Dashboard")
