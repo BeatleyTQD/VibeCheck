@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Card, Form, Button, Row, Col, } from "react-bootstrap";
+
 import APIManager from '../Modules/APIManager';
 import './Login.css'
 
@@ -49,7 +51,20 @@ const Login = (props) => {
     }
 
     return (
-        <div>hello world</div>
+        <Form>
+        <Form.Group controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control type="email" placeholder="Enter email" />
+        </Form.Group>
+      
+        <Form.Group controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control type="password" placeholder="Password" />
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Submit
+        </Button>
+      </Form>
     )
 
 }

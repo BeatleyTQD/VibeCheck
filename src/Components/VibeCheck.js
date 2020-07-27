@@ -5,7 +5,9 @@ import './VibeCheck.css';
 
 const VibeCheck = () => {
 return (
-    <div>Hello World</div>
+    <>
+        <ApplicationViews />
+    </>
 )
 }
 
