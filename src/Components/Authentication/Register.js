@@ -40,11 +40,11 @@ const Register = (props) => {
                                     if(user.userName === userNameInputValue){
                                         credentials.userId = user.id
                                         props.setUser(credentials)
+                                        props.history.push("/Dashboard")
                                     }
                                 })
                             })
                         })
-                        props.history.push("/Dashboard")
                     } else {
                         return (window.alert("Retry Password"))
                     }
@@ -110,7 +110,7 @@ const Register = (props) => {
             <Button
               className="registrationButton"
               onClick={handleRegister}
-              variant="custom"
+              variant="primary"
               type="submit"
             >
               Register

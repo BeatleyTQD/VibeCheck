@@ -11,7 +11,7 @@ const ApplicationViews = props => {
     return (
         <>
         {/* Login */}
-        <Route path="/Login" render={(props) => {
+        <Route exact path="/" render={(props) => {
             return <Login setUser={setUser} {...props} />;
         }}
         />
@@ -27,7 +27,7 @@ const ApplicationViews = props => {
             if(hasUser){
                 return <Dashboard {...props} />;
             } else {
-                return <Redirect exact to="/Login" />
+                return <Redirect exact to="/" />
             }
         }}
         />

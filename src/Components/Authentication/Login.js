@@ -20,8 +20,6 @@ const Login = (props) => {
         const userPassword = document.getElementById("password").value
         let userNameCheck = false
         let passwordCheck = false
-        console.log(userNameInputValue)
-        console.log(userPassword)
 
         users.forEach(user => {
 
@@ -30,7 +28,7 @@ const Login = (props) => {
                 if (user.password === userPassword) {
                     passwordCheck = true;
                     credentials.userId = user.id
-                    props.setUsers(credentials)
+                    props.setUser(credentials)
                     props.history.push("/Dashboard")
                 }
             }
@@ -79,6 +77,13 @@ const Login = (props) => {
             </Form.Group>
                 <Button variant="primary" type="submit">
                 Submit
+            </Button>
+            <Button
+              className = "registerButton"
+              variant= "secondary"
+              onClick={() => props.history.push("/Register")}
+              type="submit">
+              Register New Account
             </Button>
       </Form>
       </div>
