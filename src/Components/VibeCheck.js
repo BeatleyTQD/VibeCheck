@@ -20,10 +20,16 @@ const VibeCheck = () => {
         sessionStorage.setItem("activeUserID", JSON.stringify(user.userId));
         sessionStorage.setItem("activeUser", user.userName)
         setHasUser(isAuthenticated())
-    }
+    };
+
+    const clearUser = () => {
+        sessionStorage.clear();
+        setHasUser(isAuthenticated());
+      }
 
 return (
         <>
+            <NavBar hasUser={hasUser} clearUser={clearUser} />
             <ApplicationViews setUser={setUser} hasUser={hasUser} />
         </>
     )   
