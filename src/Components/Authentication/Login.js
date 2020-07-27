@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Card, Form, Button, Row, Col, } from "react-bootstrap";
-
+import { Form, Button } from "react-bootstrap";
 import APIManager from '../Modules/APIManager';
 import './Login.css'
 
@@ -21,6 +20,8 @@ const Login = (props) => {
         const userPassword = document.getElementById("password").value
         let userNameCheck = false
         let passwordCheck = false
+        console.log(userNameInputValue)
+        console.log(userPassword)
 
         users.forEach(user => {
 
@@ -37,11 +38,11 @@ const Login = (props) => {
             if (userNameCheck === true) {
                 if (passwordCheck === false) {
                     return (
-                        alert("Password is incorrect.")
+                        window.alert("Password is incorrect.")
                     )
                 }
             } else {
-                return("Username is incorrect.")
+                return(window.alert("Username is incorrect."))
             }
     }
     const handleFieldChange = (event) => {
@@ -51,20 +52,37 @@ const Login = (props) => {
     }
 
     return (
-        <Form>
-        <Form.Group controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
-        </Form.Group>
-      
-        <Form.Group controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
+        <div className="login-container">
+
+        <div className="login-top">
+        </div>
+
+        <div className="login-bottom">
+        <Form onSubmit={handleLogin}>
+            <Form.Group>
+                <Form.Label className="loginLabel">Username</Form.Label>
+                <Form.Control className="loginForm"
+                    onChange={handleFieldChange}
+                    type="text"
+                    id="userName"
+                    placeholder="Enter Username"
+                />
+            </Form.Group>
+            <Form.Group>
+                <Form.Label className="loginLabel">Password</Form.Label>
+                <Form.Control className="loginForm"
+                onChange={handleFieldChange}
+                type="password"
+                id="password"
+                placeholder="Password"
+                />
+            </Form.Group>
+                <Button variant="primary" type="submit">
+                Submit
+            </Button>
       </Form>
+      </div>
+      </div>
     )
 
 }
