@@ -13,7 +13,7 @@ const NavBar = props => {
             <Nav.Link href="/Dashboard">Dashboard</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-            <Nav.Link eventKey="link-1">Library</Nav.Link>
+            <Nav.Link href="/Library">Library</Nav.Link>
         </Nav.Item>
         <Nav.Item>
             <Nav.Link eventKey="link-2">Playlists</Nav.Link>
@@ -22,19 +22,7 @@ const NavBar = props => {
             ? <Nav.Item><Nav.Link onClick={handleLogout}>Logout</Nav.Link></Nav.Item>
             : <Nav.Item><Nav.Link href="/">Login</Nav.Link></Nav.Item>
         }
-
         </Nav>
-
-        //         {props.hasUser
-        //             ? <li>
-        //                 <span className="nav-link" onClick={handleLogout}> Logout </span>
-        //             </li>
-        //             : <li>
-        //                 <NavLink className="nav-link" to="/">Login</NavLink>
-        //             </li>}
-        //         </ul>
-        //     </nav>
-        // </header>
     )
 
 }

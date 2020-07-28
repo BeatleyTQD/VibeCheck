@@ -3,6 +3,7 @@ import {Route, Redirect } from 'react-router-dom';
 import Login from './Authentication/Login';
 import Register from './Authentication/Register';
 import Dashboard from './Dashboard/Dashboard';
+import TrackList from './Library/TrackList';
 
 const ApplicationViews = props => {
     const hasUser = props.hasUser
@@ -32,6 +33,15 @@ const ApplicationViews = props => {
         }}
         />
 
+        {/* Library */}
+        <Route path="/Library" render={(props) => {
+            if(hasUser){
+                return <TrackList {...props} />;
+            } else {
+                return <Redirect exact to="/" />
+            }
+        }}
+        />
         </>
     )
 }
