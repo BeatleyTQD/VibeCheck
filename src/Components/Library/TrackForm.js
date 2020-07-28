@@ -17,12 +17,14 @@ const TrackForm = props => {
         stateToChange[evt.target.id] = parseInt(evt.target.value);
         setTrack(stateToChange);
     };
+    //Splits Spotify URI to grab the part we actually need - the string associated with the specific track
     const handleURIFieldChange = evt => {
         const stateToChange = { ...track };
         stateToChange[evt.target.id] = evt.target.value.split(":")[2];
         setTrack(stateToChange)
     };
 
+    //Grabs colors from database to map into user track creation form
     APIManager.GetAll("colors").then(colors => {
         setColors(colors)
     });
