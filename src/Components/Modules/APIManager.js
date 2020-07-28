@@ -32,7 +32,9 @@ export default {
     },
 
     Delete(str, id){
-        return fetch(`${URL}/${str}/${id}`)
+        return fetch(`${URL}/${str}/${id}`, {
+            method: "DELETE"
+        }).then(result => result.json())
     }
 
 }

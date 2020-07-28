@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Button } from 'react-bootstrap';
 import TrackCard from './TrackCard';
 import APIManager from '../Modules/APIManager';
 
@@ -12,6 +13,11 @@ const TrackList = (props) => {
         });
     };
 
+    const deleteTrack = id => {
+        APIManager.Delete("tracks", id)
+        .then(() => APIManager.GetAll("tracks").then(setTracks));
+    };
+
     //Gets the tracks from the API on the component's first render
     useEffect(() => {
         getTracks();
@@ -19,11 +25,13 @@ const TrackList = (props) => {
 
     return(
         <>
+            <Button variant="primary" onClick={() => {props.history.push('/Library/New')}}>Add Track</Button>{' '}
             <div>
                 {tracks.map(track => 
                     <TrackCard
                         key={track.id}
                         tracks={track}
+                        deleteTrack={deleteTrack}
                         {...props}
                         />
                 )}

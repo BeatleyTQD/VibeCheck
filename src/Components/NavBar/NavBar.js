@@ -8,7 +8,7 @@ const NavBar = props => {
         props.clearUser();
     };
     return (
-        <Nav justify variant="tabs" defaultActiveKey="/Dashboard">
+        <Nav justify variant="tabs">
         <Nav.Item>
             <Nav.Link href="/Dashboard">Dashboard</Nav.Link>
         </Nav.Item>
