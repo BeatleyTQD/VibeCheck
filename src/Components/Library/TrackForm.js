@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Form, Col } from 'react-bootstrap';
+import { Form, Col, Button } from 'react-bootstrap';
 import APIManager from '../Modules/APIManager';
 
 const TrackForm = props => {
-    const [track, setTrack] = useState({name:"", artist:"", uri:"", colorId: 0});
+    const [track, setTrack] = useState({name:"", artist:"", uri:"", description:"", colorId: 0});
     const [colors, setColors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -24,36 +24,74 @@ const TrackForm = props => {
 
     const constructNewTrack = evt => {
         evt.preventDefault();
-        if (track.name === "" || track.artist === "" || track.uri === "" || track.colorId === 0) {
+        if (track.name === "" || track.artist === "" || track.uri === "" || track.colorId === 0 || track.description === "") {
             window.alert("Please fill out entire form");
         } else {
             setIsLoading(true);
-            APIManager.Save(track)
+            APIManager.Save("tracks",track)
             .then(() => props.history.push("/Library"));
         }
     };
 
     return (
         <>
-            <Form>
-            <Form.Row>
-                <div>
-                <Col>
-                    <Form.Control placeholder="Track Name" />
-                </Col>
-                <Col>
-                    <Form.Control placeholder="Track Artist" />
-                </Col>
+        <Form>
+            <div className="new-track-container">
+                <div className="new-track-top-half">
+                    <div className="new-track-top-left">
+                        
+                        <Form.Group>
+                            <Form.Label className="trackName">Track Name</Form.Label>
+                            <Form.Control className="trackForm"
+                                onChange={handleFieldChange}
+                                type="text"
+                                id="name"
+                                placeholder="Enter Track Name"/>
+
+                            <Form.Label className="trackArtist">Track Artist</Form.Label>
+                            <Form.Control className="trackForm"
+                                onChange={handleFieldChange}
+                                type="text"
+                                id="artist"
+                                placeholder="Enter Artist Name"/>
+                        </Form.Group>
+                    </div>
+
+                    <div className="new-track-top-right">
+                        <Form.Group controlId="trackColor.ControlSelect1">
+                            <Form.Label>Track Color</Form.Label>
+                            <Form.Control as="select" className="trackForm"
+                                id="colorId"
+                                value={parseInt(track.colorId)}
+                                onChange={handleColorFieldChange}>
+                            <option>Select A Color</option>
+                            {colors.map(color =>
+                                <option key={color.id} value={color.id}>{color.name}</option>)}
+                            </Form.Control>
+                        </Form.Group>
+                    </div>
                 </div>
-                <Form.Group controlId="exampleForm.ControlSelect1">
-                    <Form.Label>Example select</Form.Label>
-                <Form.Control as="select">
-                    <option>1</option>
-                
-                </Form.Control>
-            </Form.Group>
-            </Form.Row>
-            </Form>
+
+                <div className="new-track-bottom-half">
+                    <Form.Group>
+                        <Form.Label className="trackURL">Spotify URL</Form.Label>
+                        <Form.Control className="trackForm"
+                            onChange={handleFieldChange}
+                            type="text"
+                            id="uri"
+                            placeholder="Enter Spotify URI"/>
+
+                        <Form.Label className="trackDescription">Description</Form.Label>
+                        <Form.Control className="trackForm"
+                            onChange={handleFieldChange}
+                            type="text"
+                            id="description"
+                            placeholder="What do you see?"/>
+                    </Form.Group>
+                </div>
+            </div>
+            <Button variant="primary" onClick={constructNewTrack}>Add Track</Button>{' '}
+        </Form>
         </>
     )
 }
