@@ -17,6 +17,11 @@ const TrackForm = props => {
         stateToChange[evt.target.id] = parseInt(evt.target.value);
         setTrack(stateToChange);
     };
+    const handleURIFieldChange = evt => {
+        const stateToChange = { ...track };
+        stateToChange[evt.target.id] = evt.target.value.split(":")[2];
+        setTrack(stateToChange)
+    };
 
     APIManager.GetAll("colors").then(colors => {
         setColors(colors)
@@ -76,7 +81,7 @@ const TrackForm = props => {
                     <Form.Group>
                         <Form.Label className="trackURL">Spotify URL</Form.Label>
                         <Form.Control className="trackForm"
-                            onChange={handleFieldChange}
+                            onChange={handleURIFieldChange}
                             type="text"
                             id="uri"
                             placeholder="Enter Spotify URI"/>

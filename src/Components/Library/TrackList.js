@@ -13,6 +13,11 @@ const TrackList = (props) => {
         });
     };
 
+    const deleteTrack = id => {
+        APIManager.Delete("tracks", id)
+        .then(() => APIManager.GetAll("tracks").then(setTracks));
+    };
+
     //Gets the tracks from the API on the component's first render
     useEffect(() => {
         getTracks();
@@ -26,6 +31,7 @@ const TrackList = (props) => {
                     <TrackCard
                         key={track.id}
                         tracks={track}
+                        deleteTrack={deleteTrack}
                         {...props}
                         />
                 )}
