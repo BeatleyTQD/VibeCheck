@@ -111,7 +111,7 @@ const TrackEditForm = props => {
                     </Form.Group>
                 </div>
             </div>
-            <Button variant="primary" onClick={updateExistingTrack}>Add Track</Button>{' '}
+            <Button variant="primary" onClick={updateExistingTrack}>Update Track</Button>{' '}
         </Form>
         </>
     )
