@@ -47,28 +47,26 @@ const TrackForm = props => {
                 <div className="new-track-top-half">
                     <div className="new-track-top-left">
                         
-                        <Form.Group>
+                        <Form.Group className="trackFormGroup" controlId="name">
                             <Form.Label className="trackName">Track Name</Form.Label>
                             <Form.Control className="trackForm"
                                 onChange={handleFieldChange}
                                 type="text"
-                                id="name"
                                 placeholder="Enter Track Name"/>
-
+                        </Form.Group>
+                        <Form.Group className="trackFormGroup" controlId="artist">
                             <Form.Label className="trackArtist">Track Artist</Form.Label>
                             <Form.Control className="trackForm"
                                 onChange={handleFieldChange}
                                 type="text"
-                                id="artist"
                                 placeholder="Enter Artist Name"/>
                         </Form.Group>
                     </div>
 
                     <div className="new-track-top-right">
-                        <Form.Group controlId="trackColor.ControlSelect1">
+                        <Form.Group className="trackFormGroup" controlId="colorId">
                             <Form.Label>Track Color</Form.Label>
                             <Form.Control as="select" className="trackForm"
-                                id="colorId"
                                 value={parseInt(track.colorId)}
                                 onChange={handleColorFieldChange}>
                             <option>Select A Color</option>
@@ -80,19 +78,18 @@ const TrackForm = props => {
                 </div>
 
                 <div className="new-track-bottom-half">
-                    <Form.Group>
+                    <Form.Group className="trackFormGroup" controlId="uri">
                         <Form.Label className="trackURL">Spotify URL</Form.Label>
                         <Form.Control className="trackForm"
                             onChange={handleURIFieldChange}
                             type="text"
-                            id="uri"
                             placeholder="Enter Spotify URI"/>
-
+                    </Form.Group>
+                    <Form.Group className="trackFormGroup" controlId="description">
                         <Form.Label className="trackDescription">Description</Form.Label>
                         <Form.Control className="trackForm"
                             onChange={handleFieldChange}
                             type="text"
-                            id="description"
                             placeholder="What do you see?"/>
                     </Form.Group>
                 </div>
