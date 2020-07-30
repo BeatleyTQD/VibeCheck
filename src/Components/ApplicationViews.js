@@ -7,8 +7,6 @@ import TrackList from './Library/TrackList';
 import TrackForm from './Library/TrackForm'
 import TrackDetail from './Library/TrackDetail';
 import TrackEditForm from './Library/TrackEditForm';
-import PlaylistNav from './Playlist/PlaylistNav'
-import ColorPlaylist from './Playlist/ColorPlaylist';
 
 const ApplicationViews = props => {
     const hasUser = props.hasUser
@@ -83,18 +81,6 @@ const ApplicationViews = props => {
         }}
         />
 
-        {/* Playlist */}
-        <Route exact path="/PlaylistNav"
-        render={(props) => {
-            if(hasUser){
-                return(
-                    <PlaylistNav {...props} />
-                )
-            } else {
-                return <Redirect to="/" />
-            }
-        }}
-        />
         </>
     )
 }

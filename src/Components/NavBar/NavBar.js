@@ -15,7 +15,7 @@ const NavBar = props => {
             <Nav.Link href="/Library">Library</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-            <Nav.Link href="/PlaylistNav">Playlists</Nav.Link>
+            <Nav.Link href="/Playlist">Playlists</Nav.Link>
         </Nav.Item>
         {props.hasUser
             ? <Nav.Item><Nav.Link onClick={handleLogout}>Logout</Nav.Link></Nav.Item>
