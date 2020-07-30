@@ -1,45 +1,81 @@
-.color-1 {
+#color-1 {
     background-color: #7f0000;
-    color: white
+    color: white;
+    border: solid black 1px;
+    width: 200px;
+    height: 175px;
+    margin: .25em;
 }
 
-.color-2 {
+#color-2 {
     background-color: #799ccf;
-    color: white
+    color: white;
+    border: solid black 1px;
+    width: 200px;
+    height: 175px;
+    margin: .25em;
 }
 
-.color-3 {
+#color-3 {
     background-color: #f6c92b;
-    color: white
+    color: white;
+    border: solid black 1px;
+    width: 200px;
+    height: 175px;
+    margin: .25em;
 }
 
-.color-4 {
+#color-4 {
     background-color: #EE8D49;
-    color: white
+    color: white;
+    border: solid black 1px;
+    width: 200px;
+    height: 175px;
+    margin: .25em;
 }
 
-.color-5 {
+#color-5 {
     background-color: #76b76b;
-    color: white
+    color: white;
+    border: solid black 1px;
+    width: 200px;
+    height: 175px;
+    margin: .25em;
 }
 
-.color-6 {
+#color-6 {
     background-color: #5D11CF;
-    color: white
+    color: white;
+    border: solid black 1px;
+    width: 200px;
+    height: 175px;
+    margin: .25em;
 }
 
-.color-7 {
+#color-7 {
     background-color: #915C0C;
-    color: white
+    color: white;
+    border: solid black 1px;
+    width: 200px;
+    height: 175px;
+    margin: .25em;
 }
 
-.color-8 {
+#color-8 {
     background-color: #FFFFFF;
-    color: black
+    color: black;
+    border: solid black 1px;
+    width: 200px;
+    height: 175px;
+    margin: .25em;
 }
 
-.color-9 {
+#color-9 {
     background-color: #2E2E2E;
-    color: white
+    color: white;
+    border: solid black 1px;
+    width: 200px;
+    height: 175px;
+    margin: .25em;
 }
 
