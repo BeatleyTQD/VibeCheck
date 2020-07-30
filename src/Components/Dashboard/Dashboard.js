@@ -12,10 +12,10 @@ const Dashboard = props => {
                     <Card.Body>
                     <Card.Title>Welcome, {sessionStorage.activeUser}.</Card.Title>
                     <Card.Text>
-                        <ul>
+                        {/* <ul>
                             <li>A photo will go here</li>
                             <li>Number of tracks will go here also</li>
-                        </ul>
+                        </ul> */}
                     </Card.Text>
                     </Card.Body>
                 </Card>
@@ -23,7 +23,7 @@ const Dashboard = props => {
                     <Card.Body>
                     <Card.Title>Vibe Check:</Card.Title>
                     <Card.Text>
-                        <ul>
+                        {/* <ul>
                             <li>Red</li>
                             <li>Blue</li>
                             <li>Yellow</li>
@@ -33,7 +33,7 @@ const Dashboard = props => {
                             <li>Brown</li>
                             <li>White</li>
                             <li>Black</li>
-                        </ul>
+                        </ul> */}
                     </Card.Text>
                     </Card.Body>
                 </Card>

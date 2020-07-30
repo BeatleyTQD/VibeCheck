@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, Col, Button } from 'react-bootstrap';
-import APIManager from '../Modules/APIManager';
+import APIManager from "../Modules/APIManager";
 
-const TrackForm = props => {
+
+const TrackEditForm = props => {
     const [track, setTrack] = useState({name:"", artist:"", uri:"", description:"", colorId: 0});
     const [colors, setColors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -12,34 +13,49 @@ const TrackForm = props => {
         stateToChange[evt.target.id] = evt.target.value;
         setTrack(stateToChange);
     };
+
     const handleColorFieldChange = evt => {
         const stateToChange = { ...track };
         stateToChange[evt.target.id] = parseInt(evt.target.value);
         setTrack(stateToChange);
     };
-    //Splits Spotify URI to grab the part we actually need - the string associated with the specific track
-    const handleURIFieldChange = evt => {
+
+     //Splits Spotify URI to grab the part we actually need - the string associated with the specific track
+     const handleURIFieldChange = evt => {
         const stateToChange = { ...track };
         stateToChange[evt.target.id] = evt.target.value.split(":")[2];
         setTrack(stateToChange)
     };
 
-    //Grabs colors from database to map into user track creation form
-    APIManager.GetAll("colors").then(colors => {
-        setColors(colors)
-    });
-
-    const constructNewTrack = evt => {
+    const updateExistingTrack = evt => {
         evt.preventDefault();
-        if (track.name === "" || track.artist === "" || track.uri === "" || track.colorId === 0 || track.description === "") {
-            window.alert("Please fill out entire form");
-        } else {
-            setIsLoading(true);
-            APIManager.Save("tracks",track)
-            .then(() => props.history.push("/Library"));
-        }
+        setIsLoading(true);
+        
+        const editedTrack = {
+            id: props.match.params.trackId,
+            name: track.name,
+            artist: track.artist,
+            uri: track.uri,
+            description: track.description,
+            colorId: parseInt(track.colorId)
+        };
+
+        APIManager.Update("tracks", track.id, editedTrack)
+        .then(() => props.history.push("/Library"))
     };
 
+    useEffect(() => {
+        APIManager.GetById("tracks", props.match.params.trackId)
+        .then(track => {
+            //grabs colors for selection in edit form
+            APIManager.GetAll("colors").then(colors =>{
+                setColors(colors)
+            });
+            setTrack(track);
+            setIsLoading(false);
+        });
+    }, []);
+    
     return (
         <>
         <Form>
@@ -52,14 +68,15 @@ const TrackForm = props => {
                             <Form.Control className="trackForm"
                                 onChange={handleFieldChange}
                                 type="text"
-                                placeholder="Enter Track Name"/>
+                                value={track.name}/>
+                                
                         </Form.Group>
                         <Form.Group className="trackFormGroup" controlId="artist">
                             <Form.Label className="trackArtist">Track Artist</Form.Label>
                             <Form.Control className="trackForm"
                                 onChange={handleFieldChange}
                                 type="text"
-                                placeholder="Enter Artist Name"/>
+                                value={track.artist}/>
                         </Form.Group>
                     </div>
 
@@ -83,21 +100,21 @@ const TrackForm = props => {
                         <Form.Control className="trackForm"
                             onChange={handleURIFieldChange}
                             type="text"
-                            placeholder="Enter Spotify URI"/>
+                            value={track.uri}/>
                     </Form.Group>
                     <Form.Group className="trackFormGroup" controlId="description">
                         <Form.Label className="trackDescription">Description</Form.Label>
                         <Form.Control className="trackForm"
                             onChange={handleFieldChange}
                             type="text"
-                            placeholder="What do you see?"/>
+                            value={track.description}/>
                     </Form.Group>
                 </div>
             </div>
-            <Button variant="primary" onClick={constructNewTrack}>Add Track</Button>{' '}
+            <Button variant="primary" onClick={updateExistingTrack}>Update Track</Button>{' '}
         </Form>
         </>
     )
 }
 
-export default TrackForm
+export default TrackEditForm
