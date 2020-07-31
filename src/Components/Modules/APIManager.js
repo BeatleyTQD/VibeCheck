@@ -12,7 +12,7 @@ export default {
     },
 
     GetColorPlaylist(id){
-        return fetch(`${URL}/colors/${id}?_embed=tracks`)
+        return fetch(`${URL}/tracks?colorId=${id}`)
         .then(result => result.json())
     },
     

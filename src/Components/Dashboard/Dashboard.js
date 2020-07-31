@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { Jumbotron, Button, CardDeck, Card } from 'react-bootstrap';
+import { Jumbotron, CardDeck, Card } from 'react-bootstrap';
 import APIManager from '../Modules/APIManager';
 import './Dashboard.css';
 
