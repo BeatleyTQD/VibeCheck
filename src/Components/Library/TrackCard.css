@@ -1,5 +1,31 @@
-.track-card {
-    margin: 2em 3em;
+#track-card {
+    margin: 1em 1.25em;
+    border: 3px outset;
+}
+
+#track-header {
+    background-color: #010081;
+    padding: .4em .4em .6em .4em;
+}
+
+#track-body {
+    margin: 3em;
+}
+
+#w95-delete{
+    background-color: #b3b3b3;
+    border: 1px outset;
+    float: right;
+}
+
+#w95-details{
+    background-color: #b3b3b3;
+    border: 2px outset;
+}
+
+#track-footer {
+    background-color: #b3b3b3;
+    padding: .5em;
 }
 
 #color-1 {
@@ -33,13 +59,13 @@
 }
 
 #color-7 {
-    background-color: #AA703E;
+    background-color: #915a2e;
     color: white;
 }
 
 #color-8 {
     background-color: #FCFBF7;
-    color: black;
+    color: white;
 }
 
 #color-9 {

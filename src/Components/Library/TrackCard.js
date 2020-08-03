@@ -6,16 +6,20 @@ import './TrackCard.css'
 const TrackCard = props => {
     return (
         <>
-        <Card id={`color-${props.tracks.colorId}`} className="text-center track-card">
-        <Card.Header>{props.tracks.name} by {props.tracks.artist}</Card.Header>
-            <Card.Body className="text-center">
-                <Iframe src={`https://open.spotify.com/embed/track/${props.tracks.uri}`} width="475" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"/>
-            </Card.Body>
-            <Card.Footer>
-                <Button variant="primary" onClick={() => props.history.push(`/Library/${props.tracks.id}`)}>Details</Button>{' '}
-                <Button variant="warning" onClick={() => props.deleteTrack(props.tracks.id)}>Delete</Button>{' '}
-            </Card.Footer>
-        </Card>
+        <div id="track-card">
+            <div id={`color-${props.tracks.colorId}`} >
+                <div id="track-header">
+                    "{props.tracks.name}" by {props.tracks.artist}
+                    <button id="w95-delete" onClick={() => props.deleteTrack(props.tracks.id)}>X</button>{' '}
+                </div>
+                <div className="text-center" id="track-body">
+                    <Iframe src={`https://open.spotify.com/embed/track/${props.tracks.uri}`} width="425" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"/>
+                </div>
+                <div id="track-footer" className="text-center">
+                    <button id="w95-details" onClick={() => props.history.push(`/Library/${props.tracks.id}`)}>Details</button>{' '}
+                </div>
+            </div>
+        </div>
         </>
     )
 }
