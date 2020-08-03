@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Col, Button } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 import APIManager from '../Modules/APIManager';
 
 const TrackForm = props => {

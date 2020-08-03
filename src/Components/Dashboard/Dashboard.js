@@ -1,9 +1,21 @@
 import React, {useEffect, useState} from 'react';
-import { Jumbotron, Button, CardDeck, Card } from 'react-bootstrap';
+import { Jumbotron, CardDeck, Card } from 'react-bootstrap';
 import APIManager from '../Modules/APIManager';
 import './Dashboard.css';
 
 const Dashboard = props => {
+    const [colors, setColors] = useState([]);
+
+    const getColorAssociations = () => {
+        return APIManager.GetAll("colors").then(colors => {
+            setColors(colors)
+        })
+    }
+
+    useEffect(() => {
+        getColorAssociations();
+    }, []);
+
     return (
         <>
         <Jumbotron>
@@ -23,17 +35,8 @@ const Dashboard = props => {
                     <Card.Body>
                     <Card.Title>Vibe Check:</Card.Title>
                     <Card.Text>
-                        {/* <ul>
-                            <li>Red</li>
-                            <li>Blue</li>
-                            <li>Yellow</li>
-                            <li>Orange</li>
-                            <li>Green</li>
-                            <li>Purple</li>
-                            <li>Brown</li>
-                            <li>White</li>
-                            <li>Black</li>
-                        </ul> */}
+                        {colors.map(color =>
+                            <div key={color.id}>{color.name}: {color.mood}</div>)}
                     </Card.Text>
                     </Card.Body>
                 </Card>

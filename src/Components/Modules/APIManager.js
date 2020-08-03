@@ -11,6 +11,11 @@ export default {
         .then(res => res.json())
     },
 
+    GetColorPlaylist(id){
+        return fetch(`${URL}/tracks?colorId=${id}`)
+        .then(result => result.json())
+    },
+    
     Save(str, obj){
         return fetch(`${URL}/${str}`, {
             method:'POST',

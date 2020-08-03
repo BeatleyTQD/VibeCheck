@@ -7,6 +7,7 @@ import TrackList from './Library/TrackList';
 import TrackForm from './Library/TrackForm'
 import TrackDetail from './Library/TrackDetail';
 import TrackEditForm from './Library/TrackEditForm';
+import Playlist from './Playlist/Playlist';
 
 const ApplicationViews = props => {
     const hasUser = props.hasUser
@@ -77,6 +78,19 @@ const ApplicationViews = props => {
                 )
             } else {
                 return <Redirect to="/"/>
+            }
+        }}
+        />
+
+        {/* Playlist */}
+        <Route exact path="/Playlist"
+        render={props => {
+            if(hasUser){
+                return(
+                    <Playlist {...props} />
+                )
+            } else {
+                return <Redirect to="/" />
             }
         }}
         />
