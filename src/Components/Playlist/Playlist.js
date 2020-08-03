@@ -16,6 +16,7 @@ const Playlist = props => {
         })
     }
 
+    //Sends color id based on user selection into API call
     const getTracks = () => {
         APIManager.GetColorPlaylist(clickedButton)
         .then(tracks => {
@@ -28,7 +29,7 @@ const Playlist = props => {
         getTracks();
     }, [clickedButton])
 
-    
+    //Gets user selected color id for playlist generation
     const setColorFilter = evt => {
         setClickedButton(evt.target.value)
     }
@@ -42,7 +43,8 @@ const Playlist = props => {
         return(
             <>
             {colors.map(color =>
-            <Button type="button" onClick={setColorFilter} key={color.id} value={color.id} id={`color-${color.id}`}></Button>)}
+            <Button type="button" onClick={setColorFilter} key={color.id} value={color.id} id={`button-color-${color.id}`}></Button>)}
+            <div className="TrackList-Container">
             {tracks.map(track =>
                     <TrackCard
                         key={track.id}
@@ -50,7 +52,8 @@ const Playlist = props => {
                         deleteTrack={deleteTrack}
                         {...props}
                         />
-                )}
+                        )}
+            </div>
         </>
     )
 }

@@ -1,0 +1,6 @@
+.TrackList-Container {
+    background-color: #008080;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

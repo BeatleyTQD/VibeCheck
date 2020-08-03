@@ -1,45 +1,72 @@
-.color-1 {
-    background-color: #7f0000;
-    color: white
+#button-color-1 {
+    background-color: #E64444;
+    color: white;
+    width: 125px;
+    height: 100px;
+    margin: .25em;
 }
 
-.color-2 {
+#button-color-2 {
     background-color: #799ccf;
-    color: white
+    color: white;
+    width: 125px;
+    height: 100px;
+    margin: .25em;
 }
 
-.color-3 {
+#button-color-3 {
     background-color: #f6c92b;
-    color: white
+    color: white;
+    width: 125px;
+    height: 100px;
+    margin: .25em;
 }
 
-.color-4 {
+#button-color-4 {
     background-color: #EE8D49;
-    color: white
+    color: white;
+    width: 125px;
+    height: 100px;
+    margin: .25em;
 }
 
-.color-5 {
+#button-color-5 {
     background-color: #76b76b;
-    color: white
+    color: white;
+    width: 125px;
+    height: 100px;
+    margin: .25em;
 }
 
-.color-6 {
-    background-color: #5D11CF;
-    color: white
+#button-color-6 {
+    background-color: #9559DF;
+    color: white;
+    width: 125px;
+    height: 100px;
+    margin: .25em;
 }
 
-.color-7 {
-    background-color: #915C0C;
-    color: white
+#button-color-7 {
+    background-color: #AA703E;
+    color: white;
+    width: 125px;
+    height: 100px;
+    margin: .25em;
 }
 
-.color-8 {
-    background-color: #FFFFFF;
-    color: black
+#button-color-8 {
+    background-color: #FCFBF7;
+    color: black;
+    width: 125px;
+    height: 100px;
+    margin: .25em;
 }
 
-.color-9 {
-    background-color: #2E2E2E;
-    color: white
+#button-color-9 {
+    background-color: #1A1D1E;
+    color: white;
+    width: 125px;
+    height: 100px;
+    margin: .25em;
 }
 

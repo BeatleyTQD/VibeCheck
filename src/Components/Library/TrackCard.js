@@ -6,13 +6,15 @@ import './TrackCard.css'
 const TrackCard = props => {
     return (
         <>
-        <Card >
-            <Card.Body className={`color-${props.tracks.colorId}`}>
-                <Iframe src={`https://open.spotify.com/embed/track/${props.tracks.uri}`} width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"/>
-                {props.tracks.name} by {props.tracks.artist} {props.tracks.description}
+        <Card id={`color-${props.tracks.colorId}`} className="text-center track-card">
+        <Card.Header>{props.tracks.name} by {props.tracks.artist}</Card.Header>
+            <Card.Body className="text-center">
+                <Iframe src={`https://open.spotify.com/embed/track/${props.tracks.uri}`} width="475" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"/>
+            </Card.Body>
+            <Card.Footer>
                 <Button variant="primary" onClick={() => props.history.push(`/Library/${props.tracks.id}`)}>Details</Button>{' '}
                 <Button variant="warning" onClick={() => props.deleteTrack(props.tracks.id)}>Delete</Button>{' '}
-            </Card.Body>
+            </Card.Footer>
         </Card>
         </>
     )

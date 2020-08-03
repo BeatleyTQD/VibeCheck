@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import TrackCard from './TrackCard';
 import APIManager from '../Modules/APIManager';
+import './TrackList.css';
 
 const TrackList = (props) => {
     const [tracks, setTracks] = useState([]);
@@ -25,8 +26,8 @@ const TrackList = (props) => {
 
     return(
         <>
-            <Button variant="primary" onClick={() => {props.history.push('/Library/New')}}>Add Track</Button>{' '}
-            <div>
+            <Button variant="primary" size="lg" block onClick={() => {props.history.push('/Library/New')}}>Add Track</Button>{' '}
+            <div className="TrackList-Container">
                 {tracks.map(track => 
                     <TrackCard
                         key={track.id}

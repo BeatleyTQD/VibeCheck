@@ -26,7 +26,7 @@ const TrackDetail = props => {
     if (track.name !== undefined){
         return (
             <Card className="details-container">
-                <div className={`color-${track.colorId}`}>
+                <div id={`color-${track.colorId}`}>
                     <Card.Body className="details-card-top">
                         <Iframe src={`https://open.spotify.com/embed/track/${track.uri}`} width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></Iframe>
                         {track.name} {track.artist} {track.description}
