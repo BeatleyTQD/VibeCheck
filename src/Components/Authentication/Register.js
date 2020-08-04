@@ -64,55 +64,49 @@ const Register = (props) => {
     }
     return (
       <div className="register-container">
-        <div className="register-bottom">
-        <div className="login-header">Welcome to VibeCheck&trade;</div>
-          <form className="register-form" onSubmit={handleRegister}>
-
-            <div className="register-input-field">
-              <label className="register-label">Email address</label>
-              <input
-                className="register-form"
-                onChange={handleFieldChange}
-                type="email"
-                id="email"/>
-            </div>
-
-              <div className="register-input-field">
-                <label>Username</label>
-                <input
-                  className="register-form"
-                  onChange={handleFieldChange}
-                  type="text"
-                  id="userName"/> 
-              </div>
-              
-              <div className="register-input-field">
-                <label>Password</label>
-                <input
-                  className="register-form"
-                  onChange={handleFieldChange}
-                  type="password"
-                  id="password"/> 
-              </div>
-
-              <div className="register-input-field">
-              <label>Confirm Password</label>
-              <input
-                className="register-form"
-                type="password"
-                id="confirmedPassword"
-              />
-              </div>
-            <button
-              className="registrationButton"
-              onClick={handleRegister}
-              type="submit"
-            >
-              Register
-            </button>
-          </form>
-        </div>
+      <div className="register-top">
       </div>
+          <div className="register-bottom">
+              <div className="register-header">Welcome to VibeCheck&trade;</div>
+              <form onSubmit={handleRegister} classname="register-field">
+                  <div className="register-input-field">
+                      <label>Email:</label>
+                      <input className="register-form"
+                          onChange={handleFieldChange}
+                          type="email"
+                          id="email"
+                      />
+                  </div>
+                  <div className="register-input-field">
+                      <label>Username:</label>
+                      <input className="register-form"
+                          onChange={handleFieldChange}
+                          type="text"
+                          id="userName"
+                      />
+                  </div>
+                  <div>
+                      <label>Password:</label>
+                      <input className="register-form"
+                      onChange={handleFieldChange}
+                      type="password"
+                      id="password"
+                      />
+                  </div>
+                  <div>
+                      <label>Confirm Password:</label>
+                      <input className="register-form"
+                      onChange={handleFieldChange}
+                      type="password"
+                      id="confirmedPassword"
+                      />
+                  </div>
+                  <button type="submit" className="submit-button">
+                      Register
+                  </button>
+              </form>
+          </div>
+    </div>
     )
 }
 

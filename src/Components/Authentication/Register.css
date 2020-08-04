@@ -24,6 +24,10 @@
 }
 
 .register-form {
-    margin: 15px;
-    padding: 5px;
+    width: 400px;
+}
+
+.submit-button {
+    background-color: #b3b3b3;
+    margin: 1em 2em;
 }

@@ -55,7 +55,7 @@ const Login = (props) => {
         </div>
             <div className="login-bottom">
                 <div className="login-header">Welcome to VibeCheck&trade;</div>
-                <form onSubmit={handleLogin} classname="login-field">
+                <form onSubmit={handleLogin} className="login-field">
                     <div className="login-input-field">
                         <label>Username:</label>
                         <input className="login-form"

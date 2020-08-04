@@ -12,7 +12,7 @@ export default {
     },
 
     GetColorPlaylist(id){
-        return fetch(`${URL}/tracks?colorId=${id}`)
+        return fetch(`${URL}/tracks?colorId=${id}&userId=${sessionStorage.activeUserID}`)
         .then(result => result.json())
     },
 

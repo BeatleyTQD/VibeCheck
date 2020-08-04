@@ -1,3 +1,45 @@
+html {
+    background-color: #008080;
+}
+
 .details-container {
     background-color: #008080;
+    display: flex;
+    text-align: center;
+    padding: 5em 10em 5em 10em;
+}
+
+.details-card {
+    justify-content: center;
+    border: 3px outset;
+}
+
+.details-card-top {
+    display: flex;
+}
+.track-header {
+    background-color: #010081;
+    padding: .4em .4em .6em .4em;
+}
+
+
+.details-spotify {
+    padding: 3em;
+}
+
+.details-description {
+    padding: 3em;
+    color: black;
+}
+
+.details-card-bottom {
+    background-color: #b3b3b3;
+    padding: .5em;
+}
+
+.edit-button {
+    width: 25%;
+    height: 50px;
+    background-color: #b3b3b3;
+    border: 1px outset;
 }

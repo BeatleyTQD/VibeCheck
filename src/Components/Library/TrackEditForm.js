@@ -42,7 +42,7 @@ const TrackEditForm = props => {
         };
 
         APIManager.Update("tracks", track.id, editedTrack)
-        .then(() => props.history.push("/Library"))
+        .then(() => props.history.push(`/Library/${track.id}`))
     };
 
     useEffect(() => {

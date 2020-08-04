@@ -15,7 +15,7 @@ const TrackList = (props) => {
 
     const deleteTrack = id => {
         APIManager.Delete("tracks", id)
-        .then(() => APIManager.GetAll("tracks").then(setTracks));
+        .then(() => APIManager.GetUserTracks().then(setTracks));
     };
 
     //Gets the tracks from the API on the component's first render
