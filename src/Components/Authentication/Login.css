@@ -1,0 +1,39 @@
+.login-container {
+    background-color: #008080;
+    display: flex;
+    justify-content: center;
+}
+
+.login-bottom {
+    text-align: center;
+    width: 30%;
+    border: 3px outset;
+    background-color: #b3b3b3;
+
+}
+
+.login-header {
+    text-align: left;
+    color: white;
+    background-color: #010081;
+    padding: .4em .4em .6em .4em;
+}
+
+.login-input-field {
+    padding: .75em;
+}
+
+.login-form {
+    width: 25em;
+    margin: 15px;
+    padding: 5px;
+}
+
+.submit-button {
+    background-color: #b3b3b3;
+    margin: 1em 2em;
+}
+
+.register-button {
+    background-color: #b3b3b3;
+}

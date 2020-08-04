@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from 'react-bootstrap';
 import TrackCard from './TrackCard';
 import APIManager from '../Modules/APIManager';
 import './TrackList.css';
@@ -9,7 +8,7 @@ const TrackList = (props) => {
 
     //Fetches tracks from database, setTracks updates the state
     const getTracks = () => {
-        return APIManager.GetAll("tracks").then(tracksFromAPI => {
+        return APIManager.GetUserTracks().then(tracksFromAPI => {
             setTracks(tracksFromAPI)
         });
     };
@@ -26,7 +25,9 @@ const TrackList = (props) => {
 
     return(
         <>
-            <Button variant="primary" size="lg" block onClick={() => {props.history.push('/Library/New')}}>Add Track</Button>{' '}
+            <div className="new-track-button-container">
+            <button className="new-track-button" onClick={() => {props.history.push('/Library/New')}}>Add Track</button>{' '}
+            </div>
             <div className="TrackList-Container">
                 {tracks.map(track => 
                     <TrackCard

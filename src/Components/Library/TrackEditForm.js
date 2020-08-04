@@ -4,7 +4,7 @@ import APIManager from "../Modules/APIManager";
 
 
 const TrackEditForm = props => {
-    const [track, setTrack] = useState({name:"", artist:"", uri:"", description:"", colorId: 0});
+    const [track, setTrack] = useState({userId: parseInt(sessionStorage.activeUserID), name:"", artist:"", uri:"", description:"", colorId: 0});
     const [colors, setColors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -37,6 +37,7 @@ const TrackEditForm = props => {
             artist: track.artist,
             uri: track.uri,
             description: track.description,
+            userId: parseInt(track.userId),
             colorId: parseInt(track.colorId)
         };
 

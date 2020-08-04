@@ -1,0 +1,29 @@
+.register-container {
+    background-color: #008080;
+    display: flex;
+    justify-content: center;
+}
+
+.register-bottom {
+    text-align: center;
+    width: 40%;
+    border: 3px outset;
+    background-color: #b3b3b3;
+
+}
+
+.register-header {
+    text-align: left;
+    color: white;
+    background-color: #010081;
+    padding: .4em .4em .6em .4em;
+}
+
+.register-input-field {
+    padding: 1em;
+}
+
+.register-form {
+    margin: 15px;
+    padding: 5px;
+}

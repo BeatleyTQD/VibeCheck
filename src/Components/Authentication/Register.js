@@ -63,63 +63,55 @@ const Register = (props) => {
         setCredentials(stateToChange);
     }
     return (
-      <div className="registerContainer">
-        <Card className="registrationCard">
-        <Card.Body>
-          <Form className="registerForm" onSubmit={handleRegister}>
-            <Form.Group>
-              <Form.Label className="registerLabel">Email address</Form.Label>
-              <Form.Control
-                className="registerLogin"
+      <div className="register-container">
+        <div className="register-bottom">
+        <div className="login-header">Welcome to VibeCheck&trade;</div>
+          <form className="register-form" onSubmit={handleRegister}>
+
+            <div className="register-input-field">
+              <label className="register-label">Email address</label>
+              <input
+                className="register-form"
                 onChange={handleFieldChange}
                 type="email"
-                id="email"
-                placeholder="Enter Email"
-              />
-            </Form.Group>
-            <Form.Group>
-              <Form.Label className="registerLabel">Username</Form.Label>
-              <Form.Control
-                className="registerLogin"
-                onChange={handleFieldChange}
-                type="userName"
-                id="userName"
-                placeholder="Enter Username"
-              />
-              <Form.Text className="text-muted"></Form.Text>
-            </Form.Group>
-            <Form.Group>
-              <Form.Label className="registerLabel">Password</Form.Label>
-              <Form.Control
-                className="registerLogin"
-                onChange={handleFieldChange}
-                type="password"
-                id="password"
-                placeholder="Enter Password"
-              />
-            </Form.Group>
-            <Form.Group>
-              <Form.Label className="registerLabel">
-                Confirm Password
-              </Form.Label>
-              <Form.Control
-                className="registerLogin"
+                id="email"/>
+            </div>
+
+              <div className="register-input-field">
+                <label>Username</label>
+                <input
+                  className="register-form"
+                  onChange={handleFieldChange}
+                  type="text"
+                  id="userName"/> 
+              </div>
+              
+              <div className="register-input-field">
+                <label>Password</label>
+                <input
+                  className="register-form"
+                  onChange={handleFieldChange}
+                  type="password"
+                  id="password"/> 
+              </div>
+
+              <div className="register-input-field">
+              <label>Confirm Password</label>
+              <input
+                className="register-form"
                 type="password"
                 id="confirmedPassword"
-                placeholder="Confirm Password"
               />
-            </Form.Group>
-            <Button
+              </div>
+            <button
               className="registrationButton"
               onClick={handleRegister}
-              variant="primary"
               type="submit"
             >
               Register
-            </Button>
-          </Form>
-          </Card.Body>
-        </Card>
+            </button>
+          </form>
+        </div>
       </div>
     )
 }

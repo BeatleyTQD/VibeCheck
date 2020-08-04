@@ -33,7 +33,7 @@ const TrackDetail = props => {
                     </Card.Body>
                     <Card.Body className="details-card-bottom">
                         <Button variant="primary" onClick={() => props.history.push(`/Library/${track.id}/Edit`)}>Edit</Button>{' '}
-                        <Button variant="warning" onClick={() => props.deleteTrack(props.tracks.id)}>Delete</Button>{' '}
+                        {/* <Button variant="warning" onClick={() => props.deleteTrack(props.tracks.id)}>Delete</Button>{' '} */}
                     </Card.Body>
                 </div>
             </Card>

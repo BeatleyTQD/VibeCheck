@@ -36,14 +36,16 @@ const Playlist = props => {
     
     const deleteTrack = id => {
         APIManager.Delete("tracks", id)
-        .then(() => APIManager.GetAll("tracks").then(setTracks));
+        .then(() => APIManager.GetColorPlaylist(clickedButton).then(setTracks));
     };
 
     
         return(
             <>
+            <div className="color-button-container">
             {colors.map(color =>
-            <Button type="button" onClick={setColorFilter} key={color.id} value={color.id} id={`button-color-${color.id}`}></Button>)}
+            <button type="button" onClick={setColorFilter} key={color.id} value={color.id} id={`button-color-${color.id}`}></button>)}
+            </div>
             <div className="TrackList-Container">
             {tracks.map(track =>
                     <TrackCard

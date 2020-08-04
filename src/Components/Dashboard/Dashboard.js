@@ -18,8 +18,8 @@ const Dashboard = props => {
 
     return (
         <>
-        <Jumbotron>
-            <CardDeck>
+        <Jumbotron className="dashboard-jumbo">
+            <CardDeck >
                 <Card>
                     <Card.Body>
                     <Card.Title>Welcome, {sessionStorage.activeUser}.</Card.Title>
@@ -42,12 +42,14 @@ const Dashboard = props => {
                 </Card>
             </CardDeck>
         </Jumbotron>
+        <div className="random-tracks-container">
         <p>Stretch goal cards will go here...eventually</p>
         <p>Stretch goal cards will go here...eventually</p>
         <p>Stretch goal cards will go here...eventually</p>
         <p>Stretch goal cards will go here...eventually</p>
         <p>Stretch goal cards will go here...eventually</p>
         <p>Stretch goal cards will go here...eventually</p>
+        </div>
         </>
     )
 }

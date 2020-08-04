@@ -3,7 +3,7 @@ import { Form, Button } from 'react-bootstrap';
 import APIManager from '../Modules/APIManager';
 
 const TrackForm = props => {
-    const [track, setTrack] = useState({name:"", artist:"", uri:"", description:"", colorId: 0});
+    const [track, setTrack] = useState({userId: parseInt(sessionStorage.activeUserID), name:"", artist:"", uri:"", description:"", colorId: 0});
     const [colors, setColors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 

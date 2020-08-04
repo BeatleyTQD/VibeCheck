@@ -22,6 +22,7 @@ const NavBar = props => {
             : <Nav.Item><Nav.Link href="/">Login</Nav.Link></Nav.Item>
         }
         </Nav>
+    
     )
 
 }

@@ -15,6 +15,11 @@ export default {
         return fetch(`${URL}/tracks?colorId=${id}`)
         .then(result => result.json())
     },
+
+    GetUserTracks(){
+        return fetch(`${URL}/tracks?userId=${sessionStorage.activeUserID}`)
+        .then(res => res.json())
+    },
     
     Save(str, obj){
         return fetch(`${URL}/${str}`, {
