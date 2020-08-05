@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Form, Button } from "react-bootstrap";
 import APIManager from '../Modules/APIManager';
 import './Login.css'
 
@@ -51,8 +50,6 @@ const Login = (props) => {
 
     return (
         <div className="login-container">
-        <div className="login-top">
-        </div>
             <div className="login-bottom">
                 <div className="login-header">Welcome to VibeCheck&trade;</div>
                 <form onSubmit={handleLogin} className="login-field">

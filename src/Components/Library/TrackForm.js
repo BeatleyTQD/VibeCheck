@@ -41,61 +41,38 @@ const TrackForm = props => {
     };
 
     return (
-        <>
-        <Form>
+            <>
+        <form>
+            <fieldset>
             <div className="new-track-container">
-                <div className="new-track-top-half">
-                    <div className="new-track-top-left">
-                        
-                        <Form.Group className="trackFormGroup" controlId="name">
-                            <Form.Label className="trackName">Track Name</Form.Label>
-                            <Form.Control className="trackForm"
-                                onChange={handleFieldChange}
-                                type="text"
-                                placeholder="Enter Track Name"/>
-                        </Form.Group>
-                        <Form.Group className="trackFormGroup" controlId="artist">
-                            <Form.Label className="trackArtist">Track Artist</Form.Label>
-                            <Form.Control className="trackForm"
-                                onChange={handleFieldChange}
-                                type="text"
-                                placeholder="Enter Artist Name"/>
-                        </Form.Group>
-                    </div>
+                <label htmlFor="name">Track Name:</label>
+                <input
+                    type="text"
+                    onChange={handleFieldChange}
+                    id="name"/>
+                
+                <label htmlFor="artist">Artist:</label>
+                <input
+                    type="text"
+                    onChange={handleFieldChange}
+                    id="artist"/>
 
-                    <div className="new-track-top-right">
-                        <Form.Group className="trackFormGroup" controlId="colorId">
-                            <Form.Label>Track Color</Form.Label>
-                            <Form.Control as="select" className="trackForm"
-                                value={parseInt(track.colorId)}
-                                onChange={handleColorFieldChange}>
-                            <option>Select A Color</option>
-                            {colors.map(color =>
-                                <option key={color.id} value={color.id}>{color.name}</option>)}
-                            </Form.Control>
-                        </Form.Group>
-                    </div>
-                </div>
-
-                <div className="new-track-bottom-half">
-                    <Form.Group className="trackFormGroup" controlId="uri">
-                        <Form.Label className="trackURL">Spotify URL</Form.Label>
-                        <Form.Control className="trackForm"
-                            onChange={handleURIFieldChange}
-                            type="text"
-                            placeholder="Enter Spotify URI"/>
-                    </Form.Group>
-                    <Form.Group className="trackFormGroup" controlId="description">
-                        <Form.Label className="trackDescription">Description</Form.Label>
-                        <Form.Control className="trackForm"
-                            onChange={handleFieldChange}
-                            type="text"
-                            placeholder="What do you see?"/>
-                    </Form.Group>
-                </div>
+                <label htmlFor="color">Color:</label>
+                <select
+                    id="colorId"
+                    value={parseInt(colors.colorId)}
+                    onChange={handleColorFieldChange}
+                ><option>Select a Color</option>
+                    {colors.map(color =>
+                        <option key={color.id} value={color.id}>
+                            {color.name}
+                        </option>
+                        )}
+                </select>
+            <button onClick={constructNewTrack}>Add Track</button>{' '}
             </div>
-            <Button variant="primary" onClick={constructNewTrack}>Add Track</Button>{' '}
-        </Form>
+            </fieldset>
+        </form>
         </>
     )
 }

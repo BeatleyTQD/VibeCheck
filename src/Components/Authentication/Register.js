@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Form, Button, Card } from "react-bootstrap";
 import APIManager from '../Modules/APIManager';
 import './Register.css';
 
@@ -68,7 +67,7 @@ const Register = (props) => {
       </div>
           <div className="register-bottom">
               <div className="register-header">Welcome to VibeCheck&trade;</div>
-              <form onSubmit={handleRegister} classname="register-field">
+              <form onSubmit={handleRegister} className="register-field">
                   <div className="register-input-field">
                       <label>Email:</label>
                       <input className="register-form"

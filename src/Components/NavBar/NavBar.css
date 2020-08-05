@@ -1,0 +1,19 @@
+.NavBar {
+    background-color: #b3b3b3;
+    border: 3px outset;
+    height: 50px;
+    margin: 0em 0em 0em -1.1em;
+}
+
+.nav-option {
+    background-color: #b3b3b3;
+    margin: -.5em 0em;
+    border: 10px solid #b3b3b3;
+    color: black;
+    font-size: 20px;
+}
+
+.start-button {
+    border: 2px outset;
+    color: black !important;
+}

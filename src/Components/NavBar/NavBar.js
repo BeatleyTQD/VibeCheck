@@ -1,5 +1,5 @@
 import React from 'react';
-import { Nav } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import './NavBar.css';
 
 const NavBar = props => {
@@ -7,21 +7,23 @@ const NavBar = props => {
         props.clearUser();
     };
     return (
-        <Nav justify variant="tabs">
-        <Nav.Item>
-            <Nav.Link href="/Dashboard">Dashboard</Nav.Link>
+        <Navbar fixed="bottom" className="NavBar">
+        <NavDropdown title="Start" drop="up" className="start-button">
+        <Nav.Item >
+            <Nav.Link className="nav-option" href="/Dashboard">Dashboard</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-            <Nav.Link href="/Library">Library</Nav.Link>
+            <Nav.Link className="nav-option" href="/Library">Library</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-            <Nav.Link href="/Playlist">Playlists</Nav.Link>
+            <Nav.Link className="nav-option" href="/Playlist">Playlists</Nav.Link>
         </Nav.Item>
+        </NavDropdown>
         {props.hasUser
             ? <Nav.Item><Nav.Link onClick={handleLogout}>Logout</Nav.Link></Nav.Item>
             : <Nav.Item><Nav.Link href="/">Login</Nav.Link></Nav.Item>
         }
-        </Nav>
+        </Navbar>
     
     )
 
