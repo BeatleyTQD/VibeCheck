@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
+import Iframe from 'react-iframe'
 import "./TrackDetail.css"
 import APIManager from '../Modules/APIManager';
 
@@ -31,13 +32,14 @@ const TrackDetail = props => {
                 </div>
                     <div className="details-card-top">
                         <div className="details-spotify">
-                            <iframe src={`https://open.spotify.com/embed/track/${track.uri}`} width="400" height="480" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                            <Iframe src={`https://open.spotify.com/embed/track/${track.uri}`} width="400" height="480" frameborder="0" allowtransparency="true" allow="encrypted-media"/>
                         </div>
                         <div className="details-description">
                             <div>{track.description}</div>
                         </div>
                     </div>
                     <div className="details-card-bottom">
+                        <button className="edit-button" onClick={() => props.history.push(`/Library/`)}>Go Back</button>
                         <button className="edit-button" onClick={() => props.history.push(`/Library/${track.id}/Edit`)}>Edit</button>{' '}
                     </div>
                 </div>

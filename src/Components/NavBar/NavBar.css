@@ -7,10 +7,10 @@
 
 .nav-option {
     background-color: #b3b3b3;
-    margin: -.5em 0em;
-    border: 10px solid #b3b3b3;
+    margin: -.55em 0em;
+    border: 30px solid #b3b3b3;
     color: black;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .start-button {

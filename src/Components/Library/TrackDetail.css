@@ -39,7 +39,8 @@ html {
 
 .edit-button {
     width: 25%;
+    margin: 0em 3em;
     height: 50px;
     background-color: #b3b3b3;
-    border: 1px outset;
+    border: 2px outset;
 }

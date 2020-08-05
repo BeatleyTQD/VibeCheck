@@ -54,7 +54,7 @@ const Login = (props) => {
                 <div className="login-header">Welcome to VibeCheck&trade;</div>
                 <form onSubmit={handleLogin} className="login-field">
                     <div className="login-input-field">
-                        <label>Username:</label>
+                        <label htmlFor="userName">Username:</label>
                         <input className="login-form"
                             onChange={handleFieldChange}
                             type="text"
@@ -62,7 +62,7 @@ const Login = (props) => {
                         />
                     </div>
                     <div >
-                        <label>Password:</label>
+                        <label htmlFor="password">Password:</label>
                         <input className="login-form"
                         onChange={handleFieldChange}
                         type="password"

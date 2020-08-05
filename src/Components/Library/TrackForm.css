@@ -1,0 +1,29 @@
+.new-track-container{
+    background-color: #008080;
+    display: flex;
+    justify-content: center;
+    padding: 12em 0em 0em 0em;  
+}
+
+.track-form{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    border: 3px outset;
+    background-color: #b3b3b3;
+}
+
+.new-track-header {
+    text-align: left;
+    color: white;
+    background-color: #010081;
+    padding: .4em .4em .6em .4em;
+}
+
+.track-submit {
+    background-color: #b3b3b3;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+}

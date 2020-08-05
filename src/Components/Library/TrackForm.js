@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
 import APIManager from '../Modules/APIManager';
+import './TrackForm.css'
 
 const TrackForm = props => {
     const [track, setTrack] = useState({userId: parseInt(sessionStorage.activeUserID), name:"", artist:"", uri:"", description:"", colorId: 0});
@@ -45,6 +45,8 @@ const TrackForm = props => {
         <form>
             <fieldset>
             <div className="new-track-container">
+                <div className="track-form">
+                <div className="new-track-header">Add a Track</div>
                 <label htmlFor="name">Track Name:</label>
                 <input
                     type="text"
@@ -60,7 +62,7 @@ const TrackForm = props => {
                 <label htmlFor="color">Color:</label>
                 <select
                     id="colorId"
-                    value={parseInt(colors.colorId)}
+                    value={parseInt(track.colorId)}
                     onChange={handleColorFieldChange}
                 ><option>Select a Color</option>
                     {colors.map(color =>
@@ -69,7 +71,19 @@ const TrackForm = props => {
                         </option>
                         )}
                 </select>
-            <button onClick={constructNewTrack}>Add Track</button>{' '}
+                <label htmlFor="uri">Spotify URI:</label>
+                <input
+                    type="text"
+                    onChange={handleURIFieldChange}
+                    id="uri"/>
+
+                <label htmlFor="description">Description:</label>
+                <input
+                    type="text"
+                    onChange={handleFieldChange}
+                    id="description"/>
+            <button className="track-submit" onClick={constructNewTrack}>Add Track</button>{' '}
+            </div>
             </div>
             </fieldset>
         </form>
