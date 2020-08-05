@@ -6,10 +6,10 @@
 }
 
 .track-form{
-    text-align: center;
+    text-align: right;
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 40%;
     border: 3px outset;
     background-color: #b3b3b3;
 }
@@ -21,9 +21,38 @@
     padding: .4em .4em .6em .4em;
 }
 
+.track-input-field {
+    display: flex;
+    flex-direction: column;
+    padding: 1em 5em 1em 1em;
+}
+
+#name {
+    width: 70%;
+    margin: 0em 2em;
+}
+
+#artist {
+    width: 70%;
+    margin: 0em 2em;
+}
+
+#colorId {
+    width: 70%;
+    margin: 0em 2em;
+}
+
+#uri {
+    width: 70%;
+    margin: 0em 2em;
+}
+
+#description {
+    width: 70%;
+    margin: 0em 2em;
+}
+
 .track-submit {
     background-color: #b3b3b3;
-    width: 25%;
-    display: flex;
-    justify-content: center;
+    border: 3px outset;
 }
