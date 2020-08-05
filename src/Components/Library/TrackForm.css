@@ -9,7 +9,7 @@
     text-align: right;
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 50%;
     border: 3px outset;
     background-color: #b3b3b3;
 }
@@ -24,31 +24,31 @@
 .track-input-field {
     display: flex;
     flex-direction: column;
-    padding: 1em 5em 1em 1em;
+    padding: 1em 4em 1em 1em;
 }
 
 #name {
-    width: 70%;
+    width: 75%;
     margin: 0em 2em;
 }
 
 #artist {
-    width: 70%;
+    width: 75%;
     margin: 0em 2em;
 }
 
 #colorId {
-    width: 70%;
+    width: 75%;
     margin: 0em 2em;
 }
 
 #uri {
-    width: 70%;
+    width: 75%;
     margin: 0em 2em;
 }
 
 #description {
-    width: 70%;
+    width: 75%;
     margin: 0em 2em;
 }
 

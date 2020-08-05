@@ -6,9 +6,11 @@ const NavBar = props => {
     const handleLogout = () => {
         props.clearUser();
     };
+
+
     return (
         <Navbar fixed="bottom" className="NavBar">
-        <NavDropdown title="Start" drop="up" className="start-button">
+        <NavDropdown className="log-option" title="Start" drop="up" className="start-button">
         <Nav.Item >
             <Nav.Link className="nav-option" href="/Dashboard">Dashboard</Nav.Link>
         </Nav.Item>
@@ -20,8 +22,8 @@ const NavBar = props => {
         </Nav.Item>
         </NavDropdown>
         {props.hasUser
-            ? <Nav.Item><Nav.Link onClick={handleLogout}>Logout</Nav.Link></Nav.Item>
-            : <Nav.Item><Nav.Link href="/">Login</Nav.Link></Nav.Item>
+            ? <Nav.Item><Nav.Link  className="log-option"onClick={handleLogout}>Logout</Nav.Link></Nav.Item>
+            : <Nav.Item><Nav.Link className="log-option" href="/">Login</Nav.Link></Nav.Item>
         }
         </Navbar>
     

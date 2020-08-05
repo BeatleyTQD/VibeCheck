@@ -6,7 +6,7 @@ import APIManager from '../Modules/APIManager';
 
 const TrackDetail = props => {
     const [track, setTrack] = useState({name:"", artist:"", uri:"", description:"", colorId: 0, id:0});
-    const [isLoading, setIsLoading] = useState(true);
+
 
     useEffect(() => {
         APIManager.GetById("tracks", props.trackId)
@@ -19,7 +19,6 @@ const TrackDetail = props => {
                 colorId: track.colorId,
                 id: track.id
             });
-            setIsLoading(false);
         });
     }, [props.trackId]);
 
@@ -39,7 +38,7 @@ const TrackDetail = props => {
                         </div>
                     </div>
                     <div className="details-card-bottom">
-                        <button className="edit-button" onClick={() => props.history.push(`/Library/`)}>Go Back</button>
+                        <button className="edit-button" onClick={() => props.history.goBack()}>Go Back</button>
                         <button className="edit-button" onClick={() => props.history.push(`/Library/${track.id}/Edit`)}>Edit</button>{' '}
                     </div>
                 </div>

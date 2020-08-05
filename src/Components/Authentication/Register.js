@@ -84,7 +84,7 @@ const Register = (props) => {
                           id="userName"
                       />
                   </div>
-                  <div>
+                  <div className="register-input-field">
                       <label>Password:</label>
                       <input className="register-form"
                       onChange={handleFieldChange}
@@ -92,7 +92,7 @@ const Register = (props) => {
                       id="password"
                       />
                   </div>
-                  <div>
+                  <div className="register-input-field">
                       <label>Confirm Password:</label>
                       <input className="register-form"
                       onChange={handleFieldChange}

@@ -61,7 +61,7 @@ const Login = (props) => {
                             id="userName"
                         />
                     </div>
-                    <div >
+                    <div className="login-input-field">
                         <label htmlFor="password">Password:</label>
                         <input className="login-form"
                         onChange={handleFieldChange}

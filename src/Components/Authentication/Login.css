@@ -6,8 +6,8 @@
 }
 
 .login-bottom {
-    text-align: center;
-    width: 30%;
+    text-align: right;
+    width: 35%;
     border: 3px outset;
     background-color: #b3b3b3;
 
@@ -20,14 +20,13 @@
     padding: .4em .4em .6em .4em;
 }
 
-.login-input-field {
-    padding: .75em;
+.login-input-field{
+    padding: 1em 2em 0em 1em;
+
 }
 
 .login-form {
-    width: 25em;
-    margin: 15px;
-    padding: 5px;
+    margin: 10em 0em;
 }
 
 .submit-button {
@@ -37,4 +36,5 @@
 
 .register-button {
     background-color: #b3b3b3;
+    margin: 0em 10em 0em 0em;
 }

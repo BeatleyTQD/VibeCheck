@@ -6,8 +6,8 @@
 }
 
 .register-bottom {
-    text-align: center;
-    width: 40%;
+    text-align: right;
+    width: 45%;
     border: 3px outset;
     background-color: #b3b3b3;
 
@@ -21,14 +21,30 @@
 }
 
 .register-input-field {
-    padding: 1em;
-}
-
-.register-form {
-    width: 400px;
+    padding: 1.5em 3em 0em 1em;
 }
 
 .submit-button {
     background-color: #b3b3b3;
     margin: 1em 2em;
+}
+
+#email {
+    width: 75%;
+    margin: 0em 2em;
+}
+
+#userName {
+    width: 75%;
+    margin: 0em 2em;
+}
+
+#password {
+    width: 75%;
+    margin: 0em 2em;
+}
+
+#confirmedPassword {
+    width: 75%;
+    margin: 0em 2em;
 }

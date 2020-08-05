@@ -13,6 +13,11 @@
     font-size: 15px;
 }
 
+.log-option {
+    background-color: #b3b3b3;
+    color: black !important;
+}
+
 .start-button {
     border: 2px outset;
     color: black !important;

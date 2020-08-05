@@ -6,7 +6,7 @@ html {
     background-color: #008080;
     display: flex;
     text-align: center;
-    padding: 7em 12em 7em 12em;
+    padding: 10em 15em 10em 15em;
 }
 
 .details-card {
@@ -30,6 +30,7 @@ html {
 .details-description {
     padding: 3em;
     color: black;
+    font-size: 1.25em;
 }
 
 .details-card-bottom {

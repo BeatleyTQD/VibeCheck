@@ -89,14 +89,14 @@ const TrackForm = props => {
 
                             <div className="track-text-field">
                                 <label htmlFor="description">Description:</label>
-                                <input
+                                <textarea rows="4" cols="50"
                                     type="text"
                                     onChange={handleFieldChange}
                                     id="description"/>
                             </div>
 
                             <div>
-                                <button className="track-submit" onClick={constructNewTrack}>Add Track</button>{' '}
+                                <button className="track-submit"  disabled={isLoading} onClick={constructNewTrack}>Add Track</button>{' '}
                             </div>
                         </div>
                     </div>
