@@ -1,0 +1,58 @@
+.new-track-container{
+    background-color: #008080;
+    display: flex;
+    justify-content: center;
+    padding: 12em 0em 0em 0em;  
+}
+
+.track-form{
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    border: 3px outset;
+    background-color: #b3b3b3;
+}
+
+.new-track-header {
+    text-align: left;
+    color: white;
+    background-color: #010081;
+    padding: .4em .4em .6em .4em;
+}
+
+.track-input-field {
+    display: flex;
+    flex-direction: column;
+    padding: 1em 4em 1em 1em;
+}
+
+#name {
+    width: 75%;
+    margin: 0em 2em;
+}
+
+#artist {
+    width: 75%;
+    margin: 0em 2em;
+}
+
+#colorId {
+    width: 75%;
+    margin: 0em 2em;
+}
+
+#uri {
+    width: 75%;
+    margin: 0em 2em;
+}
+
+#description {
+    width: 75%;
+    margin: 0em 2em;
+}
+
+.track-submit {
+    background-color: #b3b3b3;
+    border: 3px outset;
+}

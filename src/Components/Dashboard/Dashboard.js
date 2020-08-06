@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import { Jumbotron, CardDeck, Card } from 'react-bootstrap';
 import APIManager from '../Modules/APIManager';
 import './Dashboard.css';
 
@@ -18,36 +17,21 @@ const Dashboard = props => {
 
     return (
         <>
-        <Jumbotron>
-            <CardDeck>
-                <Card>
-                    <Card.Body>
-                    <Card.Title>Welcome, {sessionStorage.activeUser}.</Card.Title>
-                    <Card.Text>
-                        {/* <ul>
-                            <li>A photo will go here</li>
-                            <li>Number of tracks will go here also</li>
-                        </ul> */}
-                    </Card.Text>
-                    </Card.Body>
-                </Card>
-                <Card>
-                    <Card.Body>
-                    <Card.Title>Vibe Check:</Card.Title>
-                    <Card.Text>
-                        {colors.map(color =>
-                            <div key={color.id}>{color.name}: {color.mood}</div>)}
-                    </Card.Text>
-                    </Card.Body>
-                </Card>
-            </CardDeck>
-        </Jumbotron>
-        <p>Stretch goal cards will go here...eventually</p>
-        <p>Stretch goal cards will go here...eventually</p>
-        <p>Stretch goal cards will go here...eventually</p>
-        <p>Stretch goal cards will go here...eventually</p>
-        <p>Stretch goal cards will go here...eventually</p>
-        <p>Stretch goal cards will go here...eventually</p>
+        <div className="dashboard-container">
+            <div className="notepad">
+                <div className="notepad-header">Color Associations - Notepad</div>
+                <div className="notepad-subheader">File Edit Search Help</div>
+                <div className="notepad-body">
+                    {colors.map(color =>
+                        <div key={color.id}>{color.name}: {color.mood}</div>)}
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                </div>
+            </div>
+        </div>
+        
+      
         </>
     )
 }

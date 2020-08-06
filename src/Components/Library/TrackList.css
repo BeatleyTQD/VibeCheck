@@ -1,0 +1,27 @@
+html {
+    background-color: #008080;
+}
+
+.new-track-button-container {
+    background-color: #008080;
+    display: flex;
+    justify-content: space-around;
+}
+
+.new-track-button {
+    display: block;
+    font-size: 25px;
+    width: 20%;
+    height: 3em;
+    margin: 1em;
+    background-color: #b3b3b3;
+    
+}
+
+.TrackList-Container {
+    background-color: #008080;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0em 0em 6em 0em;
+}

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from 'react-bootstrap';
 import './Playlist.css'
 import APIManager from '../Modules/APIManager';
 import TrackCard from '../Library/TrackCard'
@@ -16,6 +15,7 @@ const Playlist = props => {
         })
     }
 
+    //Sends color id based on user selection into API call
     const getTracks = () => {
         APIManager.GetColorPlaylist(clickedButton)
         .then(tracks => {
@@ -28,21 +28,24 @@ const Playlist = props => {
         getTracks();
     }, [clickedButton])
 
-    
+    //Gets user selected color id for playlist generation
     const setColorFilter = evt => {
         setClickedButton(evt.target.value)
     }
     
     const deleteTrack = id => {
         APIManager.Delete("tracks", id)
-        .then(() => APIManager.GetAll("tracks").then(setTracks));
+        .then(() => APIManager.GetColorPlaylist(clickedButton).then(setTracks));
     };
 
     
         return(
             <>
+            <div className="color-button-container">
             {colors.map(color =>
-            <Button type="button" onClick={setColorFilter} key={color.id} value={color.id} id={`color-${color.id}`}></Button>)}
+            <button type="button" onClick={setColorFilter} key={color.id} value={color.id} id={`button-color-${color.id}`}></button>)}
+            </div>
+            <div className="TrackList-Container">
             {tracks.map(track =>
                     <TrackCard
                         key={track.id}
@@ -50,7 +53,8 @@ const Playlist = props => {
                         deleteTrack={deleteTrack}
                         {...props}
                         />
-                )}
+                        )}
+            </div>
         </>
     )
 }

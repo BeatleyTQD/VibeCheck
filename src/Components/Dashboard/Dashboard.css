@@ -1,0 +1,34 @@
+html {
+    background-color: #008080;
+}
+
+.dashboard-container {
+    background-color: #008080;
+}
+
+.notepad {
+    background-color: white;
+    float: right;
+    margin: 15em 9em;
+    width: 40%;
+    height: auto;
+    border: 3px outset;
+    /* padding: 0em 0em 4em 0em; */
+    
+}
+
+.notepad-header {
+    background-color: #010081;
+    padding: .4em .4em .6em .4em;
+    color: white;
+}
+
+.notepad-subheader {
+    background-color: #b3b3b3;
+    border: 2px outset;
+    font-size: 90%;
+}
+
+.notepad-body {
+    overflow-y: scroll;
+}

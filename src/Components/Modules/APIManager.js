@@ -12,8 +12,13 @@ export default {
     },
 
     GetColorPlaylist(id){
-        return fetch(`${URL}/tracks?colorId=${id}`)
+        return fetch(`${URL}/tracks?colorId=${id}&userId=${sessionStorage.activeUserID}`)
         .then(result => result.json())
+    },
+
+    GetUserTracks(){
+        return fetch(`${URL}/tracks?userId=${sessionStorage.activeUserID}`)
+        .then(res => res.json())
     },
     
     Save(str, obj){

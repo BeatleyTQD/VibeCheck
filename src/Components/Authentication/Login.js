@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Form, Button } from "react-bootstrap";
 import APIManager from '../Modules/APIManager';
 import './Login.css'
 
@@ -51,42 +50,36 @@ const Login = (props) => {
 
     return (
         <div className="login-container">
-
-        <div className="login-top">
-        </div>
-
-        <div className="login-bottom">
-        <Form onSubmit={handleLogin}>
-            <Form.Group>
-                <Form.Label className="loginLabel">Username</Form.Label>
-                <Form.Control className="loginForm"
-                    onChange={handleFieldChange}
-                    type="text"
-                    id="userName"
-                    placeholder="Enter Username"
-                />
-            </Form.Group>
-            <Form.Group>
-                <Form.Label className="loginLabel">Password</Form.Label>
-                <Form.Control className="loginForm"
-                onChange={handleFieldChange}
-                type="password"
-                id="password"
-                placeholder="Password"
-                />
-            </Form.Group>
-                <Button variant="primary" type="submit">
-                Submit
-            </Button>
-            <Button
-              className = "registerButton"
-              variant= "secondary"
-              onClick={() => props.history.push("/Register")}
-              type="submit">
-              Register New Account
-            </Button>
-      </Form>
-      </div>
+            <div className="login-bottom">
+                <div className="login-header">Welcome to VibeCheck&trade;</div>
+                <form onSubmit={handleLogin} className="login-field">
+                    <div className="login-input-field">
+                        <label htmlFor="userName">Username:</label>
+                        <input className="login-form"
+                            onChange={handleFieldChange}
+                            type="text"
+                            id="userName"
+                        />
+                    </div>
+                    <div className="login-input-field">
+                        <label htmlFor="password">Password:</label>
+                        <input className="login-form"
+                        onChange={handleFieldChange}
+                        type="password"
+                        id="password"
+                        />
+                    </div>
+                    <button type="submit" className="submit-button">
+                        Submit
+                    </button>
+                    <button
+                        className = "register-button"
+                        onClick={() => props.history.push("/Register")}
+                        type="submit">
+                        Register New Account
+                    </button>
+                </form>
+            </div>
       </div>
     )
 
