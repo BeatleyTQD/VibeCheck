@@ -23,7 +23,7 @@ const NavBar = props => {
             session = "PM";
         }
         
-        h = (h < 10) ? "0" + h : h;
+        // h = (h < 10) ? "0" + h : h;
         m = (m < 10) ? "0" + m : m;
         
         var time = h + ":" + m + " " + session;
@@ -31,9 +31,7 @@ const NavBar = props => {
         document.getElementById("time").textContent = time;
         
         setTimeout(showTime, 1000);
-        
     }
-    
     showTime();
     }, )
   

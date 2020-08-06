@@ -24,6 +24,9 @@ const Dashboard = props => {
                 <div className="notepad-body">
                     {colors.map(color =>
                         <div key={color.id}>{color.name}: {color.mood}</div>)}
+                        <br></br>
+                        <br></br>
+                        <br></br>
                 </div>
             </div>
         </div>

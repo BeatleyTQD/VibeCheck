@@ -2,7 +2,7 @@
     background-color: #008080;
     display: flex;
     justify-content: center;
-    padding: 10em 0em 0em 0em;
+    padding: 11em 0em 0em 0em;
 }
 
 .login-bottom {
@@ -21,13 +21,12 @@
 }
 
 .login-field {
-    padding: .5em 0em 0em 0em;
+    /* padding: .5em 0em 0em 0em; */
     margin: 0em 0em .5em 0em;
 }
 
 .login-input-field{
-    padding: 1em 6em 0em 1em;
-
+    padding: 1.5em 5em 0em 0em;
 }
 
 .submit-button {

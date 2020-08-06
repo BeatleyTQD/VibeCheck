@@ -12,8 +12,9 @@ html {
     margin: 15em 9em;
     width: 40%;
     height: auto;
-    border: 4px outset;
-    padding: 0em 0em 4em 0em;
+    border: 3px outset;
+    /* padding: 0em 0em 4em 0em; */
+    
 }
 
 .notepad-header {
@@ -25,5 +26,9 @@ html {
 .notepad-subheader {
     background-color: #b3b3b3;
     border: 2px outset;
-    font-size: 80%;
+    font-size: 90%;
+}
+
+.notepad-body {
+    overflow-y: scroll;
 }

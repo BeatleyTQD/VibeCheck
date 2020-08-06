@@ -69,19 +69,19 @@ const Register = (props) => {
               <div className="register-header">Welcome to VibeCheck&trade;</div>
               <form onSubmit={handleRegister} className="register-field">
                   <div className="register-input-field">
-                      <label>Email:</label>
-                      <input className="register-form"
-                          onChange={handleFieldChange}
-                          type="email"
-                          id="email"
-                      />
-                  </div>
-                  <div className="register-input-field">
                       <label>Username:</label>
                       <input className="register-form"
                           onChange={handleFieldChange}
                           type="text"
                           id="userName"
+                      />
+                  </div>
+                  <div className="register-input-field">
+                      <label>Email:</label>
+                      <input className="register-form"
+                          onChange={handleFieldChange}
+                          type="email"
+                          id="email"
                       />
                   </div>
                   <div className="register-input-field">
@@ -100,9 +100,11 @@ const Register = (props) => {
                       id="confirmedPassword"
                       />
                   </div>
-                  <button type="submit" className="submit-button">
+                  <div className="button-area">
+                  <button type="submit" className="reg-submit-button">
                       Register
                   </button>
+                  </div>
               </form>
           </div>
     </div>
