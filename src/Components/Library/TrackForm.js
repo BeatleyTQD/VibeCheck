@@ -83,6 +83,7 @@ const TrackForm = props => {
                                 <label htmlFor="uri">Spotify URI:</label>
                                 <input
                                     type="text"
+                                    placeholder="In Spotify, on your desired track: More -> Share -> Copy Spotify URI"
                                     onChange={handleURIFieldChange}
                                     id="uri"/>
                             </div>

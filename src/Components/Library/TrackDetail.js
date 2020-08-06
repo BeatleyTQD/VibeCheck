@@ -29,16 +29,19 @@ const TrackDetail = props => {
                 <div className="track-header">
                     "{track.name}" by {track.artist}
                 </div>
+                <div className="track-subheader">
+                        <button className="details-nav-button" onClick={() => props.history.push(`/Library`)}>Library</button>
+                        <button className="details-nav-button" onClick={() => props.history.push(`/Playlist`)}>Playlists</button>
+                </div>
                     <div className="details-card-top">
                         <div className="details-spotify">
-                            <Iframe src={`https://open.spotify.com/embed/track/${track.uri}`} width="400" height="480" frameborder="0" allowtransparency="true" allow="encrypted-media"/>
+                            <Iframe src={`https://open.spotify.com/embed/track/${track.uri}`} width="480" height="560" frameborder="0" allowtransparency="true" allow="encrypted-media"/>
                         </div>
                         <div className="details-description">
                             <div>{track.description}</div>
                         </div>
                     </div>
                     <div className="details-card-bottom">
-                        <button className="edit-button" onClick={() => props.history.goBack()}>Go Back</button>
                         <button className="edit-button" onClick={() => props.history.push(`/Library/${track.id}/Edit`)}>Edit</button>{' '}
                     </div>
                 </div>

@@ -3,6 +3,7 @@
     border: 3px outset;
     height: 50px;
     margin: 0em 0em 0em -1.1em;
+    position: relative;
 }
 
 .nav-option {
@@ -20,5 +21,11 @@
 
 .start-button {
     border: 2px outset;
+}
+
+.move-right {
+    position: absolute;
+    right: 1.2em;
     color: black !important;
+    font-size: 1.05em;
 }

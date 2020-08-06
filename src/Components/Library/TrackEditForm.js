@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Form, Button } from 'react-bootstrap';
 import APIManager from "../Modules/APIManager";
 
 
@@ -59,61 +58,71 @@ const TrackEditForm = props => {
     
     return (
         <>
-        <Form>
-            <div className="new-track-container">
-                <div className="new-track-top-half">
-                    <div className="new-track-top-left">
-                        
-                        <Form.Group className="trackFormGroup" controlId="name">
-                            <Form.Label className="trackName">Track Name</Form.Label>
-                            <Form.Control className="trackForm"
-                                onChange={handleFieldChange}
-                                type="text"
-                                value={track.name}/>
-                                
-                        </Form.Group>
-                        <Form.Group className="trackFormGroup" controlId="artist">
-                            <Form.Label className="trackArtist">Track Artist</Form.Label>
-                            <Form.Control className="trackForm"
-                                onChange={handleFieldChange}
-                                type="text"
-                                value={track.artist}/>
-                        </Form.Group>
-                    </div>
+        <form>
+            <fieldset>
+                <div className="new-track-container">
+                    <div className="track-form">
+                        <div className="new-track-header">Add a Track</div>
+                        <div className="track-input-field">
+                            <div className="track-text-field">
+                                <label htmlFor="name">Track Name:</label>
+                                <input
+                                    type="text"
+                                    onChange={handleFieldChange}
+                                    value={track.name}
+                                    id="name"/>
+                            </div>
 
-                    <div className="new-track-top-right">
-                        <Form.Group className="trackFormGroup" controlId="colorId">
-                            <Form.Label>Track Color</Form.Label>
-                            <Form.Control as="select" className="trackForm"
-                                value={parseInt(track.colorId)}
-                                onChange={handleColorFieldChange}>
-                            <option>Select A Color</option>
-                            {colors.map(color =>
-                                <option key={color.id} value={color.id}>{color.name}</option>)}
-                            </Form.Control>
-                        </Form.Group>
+                            <div className="track-text-field">
+                                <label htmlFor="artist">Artist:</label>
+                                <input
+                                    type="text"
+                                    onChange={handleFieldChange}
+                                    value={track.artist}
+                                    id="artist"/>
+                            </div>
+
+                            <div className="track-text-field">
+                                <label htmlFor="color">Color:</label>
+                                <select
+                                    id="colorId"
+                                    value={parseInt(track.colorId)}
+                                    onChange={handleColorFieldChange}
+                                ><option>Select a Color</option>
+                                    {colors.map(color =>
+                                        <option key={color.id} value={color.id}>
+                                            {color.name}
+                                        </option>
+                                        )}
+                                </select>
+                            </div>
+                            
+                            <div className="track-text-field">
+                                <label htmlFor="uri">Spotify URI:</label>
+                                <input
+                                    type="text"
+                                    onChange={handleURIFieldChange}
+                                    value={track.uri}
+                                    id="uri"/>
+                            </div>
+
+                            <div className="track-text-field">
+                                <label htmlFor="description">Description:</label>
+                                <textarea rows="4" cols="50"
+                                    type="text"
+                                    onChange={handleFieldChange}
+                                    value={track.description}
+                                    id="description"/>
+                            </div>
+
+                            <div>
+                                <button className="track-submit"  disabled={isLoading} onClick={updateExistingTrack}>Save Track</button>{' '}
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div className="new-track-bottom-half">
-                    <Form.Group className="trackFormGroup" controlId="uri">
-                        <Form.Label className="trackURL">Spotify URL</Form.Label>
-                        <Form.Control className="trackForm"
-                            onChange={handleURIFieldChange}
-                            type="text"
-                            value={track.uri}/>
-                    </Form.Group>
-                    <Form.Group className="trackFormGroup" controlId="description">
-                        <Form.Label className="trackDescription">Description</Form.Label>
-                        <Form.Control className="trackForm"
-                            onChange={handleFieldChange}
-                            type="text"
-                            value={track.description}/>
-                    </Form.Group>
-                </div>
-            </div>
-            <Button variant="primary" onClick={updateExistingTrack}>Update Track</Button>{' '}
-        </Form>
+            </fieldset>
+        </form>
         </>
     )
 }

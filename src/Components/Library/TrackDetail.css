@@ -6,7 +6,7 @@ html {
     background-color: #008080;
     display: flex;
     text-align: center;
-    padding: 10em 15em 10em 15em;
+    padding: 8em 15em 8em 15em;
 }
 
 .details-card {
@@ -17,11 +17,26 @@ html {
 .details-card-top {
     display: flex;
 }
+
 .track-header {
     background-color: #010081;
     padding: .4em .4em .6em .4em;
+    text-align: left;
 }
 
+.track-subheader {
+    background-color: #b3b3b3;
+    border: .1px solid grey;
+    text-align: left;
+    height: 2em;
+}
+
+.details-nav-button {
+    background-color: #b3b3b3;
+    border: none;
+    font-size: 1.2em;
+    padding: 0em .5em;
+}
 
 .details-spotify {
     padding: 3em;
@@ -39,9 +54,10 @@ html {
 }
 
 .edit-button {
-    width: 25%;
+    width: 20%;
     margin: 0em 3em;
     height: 50px;
     background-color: #b3b3b3;
     border: 2px outset;
+    font-size: 1.2em;
 }

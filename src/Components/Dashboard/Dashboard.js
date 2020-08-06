@@ -17,11 +17,18 @@ const Dashboard = props => {
 
     return (
         <>
-                        {colors.map(color =>
-                            <div key={color.id}>{color.name}: {color.mood}</div>)}
-        
-        <div className="random-tracks-container">
+        <div className="dashboard-container">
+            <div className="notepad">
+                <div className="notepad-header">Color Associations - Notepad</div>
+                <div className="notepad-subheader">File Edit Search Help</div>
+                <div className="notepad-body">
+                    {colors.map(color =>
+                        <div key={color.id}>{color.name}: {color.mood}</div>)}
+                </div>
+            </div>
         </div>
+        
+      
         </>
     )
 }
