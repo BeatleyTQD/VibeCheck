@@ -24,8 +24,8 @@ Delete works the same here as on the Library page.
 1. When you're done, click "Start', then "Logout".
 
 ## Planning
-* [ERD]https://dbdiagram.io/d/5f188be01e6ca02dc1a44345
-* [Wireframe]https://sketchboard.me/rCe0AMHXqCea#/
+* [ERD](https://dbdiagram.io/d/5f188be01e6ca02dc1a44345)
+* [Wireframe](https://sketchboard.me/rCe0AMHXqCea#/)
 
 ## Technologies Used: 
 [React](https://reactjs.org/)
