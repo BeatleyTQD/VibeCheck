@@ -9,7 +9,7 @@ Vibecheck is written with React, Javascript, HTML, and CSS.
 1. `cd` into the created directory
 1. `mkdir api`
 1. `touch api/database.json`
-1.  add `{"users":[], "tracks":[], "colors":[]}` to database.
+1.  add `{"users":[], "tracks":[], "colors":[]}` to database. You will need to add your own color ids and associated terminology here. List of hard-coded colors are in the TrackCard.css file.
 1. `json-server -p 8088 -w api/database.json`
 1. Type `npm start` to auto host the app.
 
@@ -30,8 +30,8 @@ Delete works the same here as on the Library page.
 ## Technologies Used: 
 [React](https://reactjs.org/)
 [React Bootstrap](https://react-bootstrap.github.io/)
-[JavaScript]
-[CSS]
+JavaScript
+CSS
 
 
 
