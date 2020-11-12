@@ -3,14 +3,14 @@ import APIManager from '../Modules/APIManager';
 import './Login.css'
 
 const Login = (props) => {
-    const [credentials, setCredentials] = useState({ userId: 0});
+    const [credentials, setCredentials] = useState({ userId: 0 });
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
         APIManager.GetAll("users")
-        .then((response) => {
-            setUsers(response)
-        })
+            .then((response) => {
+                setUsers(response)
+            })
     }, [])
 
     const handleLogin = (event) => {
@@ -32,15 +32,15 @@ const Login = (props) => {
                 }
             }
         })
-            if (userNameCheck === true) {
-                if (passwordCheck === false) {
-                    return (
-                        window.alert("Password is incorrect.")
-                    )
-                }
-            } else {
-                return(window.alert("Username is incorrect."))
+        if (userNameCheck === true) {
+            if (passwordCheck === false) {
+                return (
+                    window.alert("Password is incorrect.")
+                )
             }
+        } else {
+            return (window.alert("Username is incorrect."))
+        }
     }
     const handleFieldChange = (event) => {
         const stateToChange = { ...credentials };
@@ -64,23 +64,24 @@ const Login = (props) => {
                     <div className="login-input-field">
                         <label htmlFor="password">Password:</label>
                         <input className="login-form"
-                        onChange={handleFieldChange}
-                        type="password"
-                        id="password"
+                            onChange={handleFieldChange}
+                            type="password"
+                            id="password"
                         />
                     </div>
+                    <p class="login-input-field">This app does NOT have real authentication, please do not use your actual credentials!</p>
                     <button type="submit" className="submit-button">
-                        Submit
+                        Login
                     </button>
                     <button
-                        className = "register-button"
+                        className="register-button"
                         onClick={() => props.history.push("/Register")}
                         type="submit">
                         Register New Account
                     </button>
                 </form>
             </div>
-      </div>
+        </div>
     )
 
 }

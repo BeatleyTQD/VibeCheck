@@ -7,10 +7,10 @@ Vibecheck is written with React, Javascript, HTML, and CSS.
 ## Setup
 1. `git clone git@github.com:BeatleyTQD/VibeCheck.git`
 1. `cd` into the created directory
-1. `mkdir api`
-1. `touch api/database.json`
+1. `mkdir API`
+1. `touch API/database.json`
 1.  add `{"users":[], "tracks":[], "colors":[]}` to database. You will need to add your own color ids and associated terminology here. List of hard-coded colors are in the TrackCard.css file.
-1. `json-server -p 8088 -w api/database.json`
+1. `json-server -p 8088 -w API/database.json`
 1. Type `npm start` to auto host the app.
 
 ## Using VibeCheck
